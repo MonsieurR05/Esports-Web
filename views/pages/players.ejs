@@ -1,0 +1,93 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="container">
+    <div class="row">
+    <h1>Players</h1>
+    <a href="/"> <button class="fa fa-home" style="font-size:48px;color:rgb(0, 0, 0)" ></button> </a> 
+    <% playersArray.forEach((player)=> { %>
+        <div class="col-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">
+                     <u><%= player.name %></u> 
+                    </h5>
+                    <strong> Email: </strong>  <b> <%= player.email %>  </b>
+                    <br>
+                    <strong> ID: </strong>  <b> <%= player.player_id %>  </b>
+                </div>
+                <a href="/editPlayer/<%= player.player_id %>" type="button" class="btn btn-secondary"></button>Edit</a>
+                <a href="/gamespec/<%=player.player_id %>" type="button" class="btn btn-secondary"> Games Played</button></a>
+            </div>  
+        </div> 
+    <% }) %>   
+</div> 
+<a href="/addPlayer/"> <button class="btn btn-primary">Add Player</button> </a>
+<%- include('../partials/footer') %>
+
+ <style>
+
+.card{
+    position: relative;
+    right: 20px;
+    margin-bottom: 20px;
+    border-radius: 65px;
+    background-color: black;
+}
+
+h1{
+    color: black;
+    text-align: center;
+    color: black
+}
+
+.fa-home{
+    border-radius: 50px;
+    position: relative;
+    right: 300px;
+    bottom: 30px;
+}
+
+.btn-primary{
+    color: rgb(255, 255, 255);
+    width: 100%;
+    border: none;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 50px;
+}
+
+.btn-secondary{
+    background-color: rgb(144, 233, 10);
+    color: black;
+    display: block;
+    width: 50%;
+    border: none;
+    font-size: 16px;
+    text-align: center;
+    margin: 10px 150px; 
+    border-radius: 20px;
+}
+
+
+strong{
+    color: white;
+    position: relative;
+    left: 20px;    
+}
+    
+u{
+    color:white;
+    position: relative;
+    left: 20px;   
+}
+
+b{
+    color: white;
+    position: relative;
+    left: 20px;
+}
+
+</style>

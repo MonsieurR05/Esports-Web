@@ -1,0 +1,46 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+
+<div class="container">
+    <div class="row">
+        <% playerGamesArray.forEach((game)=> { %>
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-body">
+                        <li><%= game.name %></li>
+                        <a href="/players/" type="button" class="btn btn-secondary">Back</button></a>
+                    </div>
+                </div>
+            </div>
+        <% }) %>   
+    </div>
+</div>
+
+<%- include('../partials/footer') %>
+
+<style>
+    .card{
+    position: relative;
+    right: 250px;
+    top: 50px;
+    margin-bottom: 20px;
+    border-radius: 65px;
+    background-color: black;
+}
+
+    li{
+        color: white;
+    }
+
+    .btn-secondary{
+    background-color: rgb(144, 233, 10);
+    color: black;
+    display: block;
+    width: 50%;
+    border: none;
+    font-size: 16px;
+    text-align: center;
+    margin: 10px 150px; 
+    border-radius: 20px;
+}
+</style>

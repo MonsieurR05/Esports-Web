@@ -1,0 +1,67 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+<u><h1><strong> Editing Game: <%= game.name%> </strong></h1> </u>
+<div class="container">
+<form action="http://localhost:3000/games/edit/<%= game.game_id %>" method="post">
+    <b>Game Name </b><input type="text" name="name" value=<%= game.name%>>
+    <b> Match Duration </b><input type="text" name="duration" value=<%= game.duration%>>
+    <b>Team Size </b><input type="text" name="team_size" value=<%= game.team_size%>>
+    <button type="submit" class="btn btn-primary">Save Game</button></a>
+ </form>
+ 
+ <form action="http://localhost:3000/games/delete/<%= game.game_id %>" method="post">
+     <button class="btn btn-danger" type="submit">Delete Game</button> 
+     <a href="/games/"><button type="button" class="btn btn-secondary" Id="back">Cancel Changes</button></a>
+ </form>
+ </div>
+ 
+<%- include('../partials/footer') %>
+
+
+<style>
+    input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+    div.container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    position: relative;
+    top: 50px
+}
+
+    button[type=submit] {
+    width: 100%;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-secondary{
+    width: 100%;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+h1{
+    text-align: center;
+}
+
+</style>
+
+
+ 

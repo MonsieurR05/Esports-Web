@@ -1,0 +1,59 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+<u><h1><strong> Add Game </strong></h1> </u>
+<div class="container">
+<form action="http://localhost:3000/games/add" method="post">
+   <b>Game Name </b><input type="text" name="name" >
+   <b> Match Duration </b><input type="text" name="duration" >
+   <b>Team Size </b><input type="text" name="team_size" >
+   <button class="btn btn-primary">Add Game</button></a>
+</form>
+
+<a href="/games/"><button type="button" class="btn btn-secondary" Id="back">Cancel Changes</button></a>
+</div>
+
+<%- include('../partials/footer') %>
+
+<style>
+    input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+    div.container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    position: relative;
+    top: 50px
+}
+
+   .btn-secondary{
+    width: 100%;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+   }
+
+   .btn-primary{
+    width: 100%;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+   }
+
+   h1{
+    text-align: center;
+}
+</style>
